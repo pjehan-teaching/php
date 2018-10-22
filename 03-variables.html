@@ -1,0 +1,243 @@
+<section id="variables">
+
+    <section>
+        <h2>Variables</h2>
+    </section>
+
+    <section>
+        <h3>La fonction echo</h3>
+        <p>La fonction echo permet d’afficher du contenu sur une page HTML :</p>
+        <pre><code class="language-php"><?php echo "Hello world!"; ?></code></pre>
+        <footer>
+            <a href="#" class="info">Chaque instruction PHP doit se terminer par un point-virgule !</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>La fonction echo</h3>
+        <p>Cette fonction permet également de générer du code HTML :</p>
+        <pre><code class="language-php"><?php echo "&lt;h1&gt;Hello world!&lt;/h1&gt;"; ?></code></pre>
+        <p>On évitera d’écrire des balises HTML en PHP afin de conserver la coloration syntaxique :</p>
+        <pre><code class="language-php">&lt;h1&gt;<?php echo "Hello world!"; ?>&lt;/h1&gt;</code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.7em;">Le PHP peut générer du code HTML, CSS ou Javascript car il est traité par le serveur</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Déclarer une variable</h3>
+        <ul>
+            <li>Le nom des variables doit commencer par le signe dollars ($)</li>
+            <li>Le nom des variables doit être composé uniquement de caractères alpha-numériques (A-z, 0-9, et _ )</li>
+            <li>Le nom des variables ne doit pas contenir d’accents (utiliser un nommage en anglais ?)</li>
+            <li>Le nom des variables ne doit pas commencer par un chiffre</li>
+            <li>Le nom des variables est sensible à la casse (case-sensitive). Ainsi $var est différent de $Var</li>
+            <li>Lors de la déclaration, les variables ne sont pas typées</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Déclarer une variable</h3>
+        <ul>
+            <li>Il est important de bien nommer ses variables (éviter <code class="language-php">$a</code>, <code class="language-php">$b</code>… mais préférer <code class="language-php">$date</code>, <code class="language-php">$nom</code>...)</li>
+            <li>
+                On retrouve souvent deux "modes" d’écriture pour les variables :
+                <ul>
+                    <li>CamelCase : <code class="language-php">$dateDeNaissance</code></li>
+                    <li>Underscore : <code class="language-php">$date_de_naissance</code></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Déclarer une variable</h3>
+        <p>Parmi ces variables, lesquelles sont correctement déclarées ?</p>
+        <ul>
+            <li>maVariable</li>
+            <li>$ma_variable</li>
+            <li>$MaVariable2</li>
+            <li>$ma variable</li>
+            <li>string ma_variable</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Les types de variable</h3>
+        <p>En PHP, une même variable peut contenir des informations de différents types :</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Chaîne de caractères (string)</td>
+                <td>Texte écrit entre guillemets ou apostrophes</td>
+            </tr>
+            <tr>
+                <td>Nombre entier (int)</td>
+                <td>Nombre entier positif ou négatif</td>
+            </tr>
+            <tr>
+                <td>Nombre à virgule (float)</td>
+                <td>Nombre à virgule positif ou négatif (la virgule s’écrit avec le caractère “.”)</td>
+            </tr>
+            <tr>
+                <td>Booléens (bool)</td>
+                <td>Valeur vraie (true) ou fausse (false)</td>
+            </tr>
+            <tr>
+                <td>Vide (NULL)</td>
+                <td>Aucun type, variable vide</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Affecter une valeur</h3>
+        <p>Affecter une valeur à une variable :</p>
+        <pre><code class="language-php"><?php
+$nom = 'Dupont'; // Variable de type string
+$prenom = "Jean"; // Variable de type string
+$message = 'J\'ai compris le PHP'; // Variable de type string
+$age = 22; // Variable de type int
+$taille = 1.80; // Variable de type float
+$homme = true; // Variable de type bool
+$profession = NULL; // Variable vide
+?></code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.8em;">Une variable ne peut pas changer de nom mais elle peut changer de valeur</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>La concaténation</h3>
+        <p>Effectuer une concaténation :</p>
+        <pre><code class="language-php"><?php
+$nom = 'Dupont'; // Variable de type string
+$prenom = "Jean"; // Variable de type string
+$message = "Bonjour $nom $prenom";
+$message = 'Bonjour ' . $nom . ' ' . $prenom;
+?></code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.6em;">La syntaxe avec les apostrophes est préférable car elle permet de conserver la coloration syntaxique</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>La concaténation</h3>
+        <p>Afficher la valeur d’une variable :</p>
+        <pre><code class="language-php"><?php echo 'Bonjour ' . $nom . ' ' . $prenom . '. Vous avez ' . $age . ' ans !'; ?></code></pre>
+    </section>
+
+    <section>
+        <h3>La concaténation</h3>
+        <p>Quel message sera affiché lors de l'exécution de ce code PHP ?</p>
+        <pre><code class="language-php"><?php
+$message = 'Bonjour';
+$username = 'jdupont';
+$age = 16;
+$message = $message . ' ' . $username . ' vous avez ' . $age . ' ans';
+$age = $age + 1;
+echo $message;
+?></code></pre>
+    </section>
+
+    <section>
+        <h3>L'incrémentation</h3>
+        <p>Dans l’une des slides précédentes, nous avons effectués une incrémentation sur une variable (<code class="language-php">$age = $age + 1</code>). Cette opération étant récurrente en programmation, il existe une syntaxe simplifiée :</p>
+        <pre><code class="language-php"><?php
+$age = 16;
+$age++; // $age = 17
+$age--; // $age = 16
+?></code></pre>
+    </section>
+
+    <section>
+        <h3>Opérations arithmétiques</h3>
+        <p>Il est possible d’effectuer des opérations simples en PHP (pour les opérations plus complexes, nous utiliserons des fonctions).</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Opérateur</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Soustraction</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulo (reste de la division)</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Opérations arithmétiques</h3>
+        <p>Cet exemple permet de calculer la différence entre deux notes :</p>
+        <pre><code class="language-php"><?php
+$note1 = 12;
+$note2 = 15;
+echo 'Différence entre les deux notes : ' . ($note2 - $note1);
+?></code></pre>
+        <div class="instructions">
+            <ol>
+                <li>Ecrivez l’algorithme permettant de calculer et d’afficher la moyenne de deux notes.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Le type DateTime</h3>
+        <p>Il existe également un autre type de donnée permettant de stocker des dates :</p>
+        <pre><code class="language-php"><?php $date_naissance = new DateTime("2016-07-08 11:14:15"); ?></code></pre>
+        <table>
+            <thead>
+            <tr>
+                <th>Fonction</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code class="language-php">DateTime::setDate</code></td>
+                <td>Assigne la date</td>
+            </tr>
+            <tr>
+                <td><code class="language-php">DateTime::diff</code></td>
+                <td>Retourne la différence entre deux objets DateTime</td>
+            </tr>
+            <tr>
+                <td><code class="language-php">DateTime::format</code></td>
+                <td>Retourne une date formatée suivant le format fourni</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Utilisez les variables pour stocker les données du projet fil rouge.</p>
+    </section>
+
+</section>
