@@ -1,0 +1,89 @@
+<section id="dbal">
+
+    <section>
+        <h2>Accès à la base de données</h2>
+    </section>
+
+    <section>
+        <h3>Extensions disponibles</h3>
+        <ul>
+            <li>mysql : Obsolète (deprecated)</li>
+            <li>mysqli : Remplace mysql. Orienté objet</li>
+            <li>PDO : Permet un accès à différent types de base de données (MySQL, Oracle, SQL Server…). Orienté objet.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>PDO</h3>
+        <p>PDO (PHP Data Objects)</p>
+        <p>Pour activer l’extension PDO, ouvrez le fichier php.ini et recherchez la ligne suivante :</p>
+        <pre><code class="language-php">pdo_mysql.default_socket = ...</code></pre>
+    </section>
+
+    <section>
+        <h3>Connexion</h3>
+        <p>Pour se connecter à la base de données MySQL, nous allons avoir besoin des informations suivantes :</p>
+        <ul>
+            <li>Nom de domaine (localhost)</li>
+            <li>Nom de la base de données (ma_base)</li>
+            <li>Nom d’utilisateur (root)</li>
+            <li>Mot de passe (root)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Connexion</h3>
+        <p>Nous allons ensuite instancier l’objet PDO en utilisant le mot clé “new” :</p>
+        <pre><code class="language-php">$host = '127.0.0.1';
+$dbname = 'ma_base';
+$user = 'root';
+$password = 'root';
+
+try {
+  $dbh = new PDO('mysql:dbname=' . $dbname . ';host=' . $host, $user, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+} catch (PDOException $e) {
+  die('Connexion échouée : ' . $e->getMessage());
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Accès aux données</h3>
+        <p>Nous pouvons à présent dialoguer avec la base de données en utilisant la variable <code class="language-php">$dbh</code> créée précédemment.</p>
+        <p>Pour effectuer une requête SELECT, nous utiliserons la suite d’instructions suivante :</p>
+        <pre><code class="language-php">$query = "SELECT * FROM utilisateurs"; // Enregistrement de la requête SQL dans une variable
+$stmt = $dbh->prepare($query); // Préparation de la requête et récupération d'un objet de type PDOStatement
+$stmt->execute(); // Execution de la requête
+$utilisateurs = $stmt->fetchAll(); // Retourne l'ensemble des résultats de la requête sous forme de tableau (array)</code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.7em;">Vous pouvez utiliser $stmt->fetch() pour retourner uniquement le 1er résultat de la requête</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Accès aux données</h3>
+        <p>Il y a plusieurs manières d’ajouter des paramètres dans une requête SQL avec PDO.</p>
+        <pre><code class="language-php">$query = "SELECT * FROM utilisateurs WHERE pseudo = '" . $_SESSION['user'] . "'";
+$stmt = $dbh->prepare($query);
+$stmt->execute();
+$utilisateur = $stmt->fetch();</code></pre>
+        <pre><code class="language-php">$query = "SELECT * FROM utilisateurs WHERE pseudo = ?";
+$stmt = $dbh->prepare($query);
+$stmt->execute(array($_SESSION['user']));
+$utilisateur = $stmt->fetch();</code></pre>
+        <pre><code class="language-php">$query = "SELECT * FROM utilisateurs WHERE pseudo = :pseudo";
+$stmt = $dbh->prepare($query);
+$stmt->execute(array('pseudo' => $_SESSION['user']));
+$utilisateur = $stmt->fetch();</code></pre>
+    </section>
+
+    <section>
+        <h3>Accès aux données</h3>
+        <p>Nous utiliserons cette dernière méthode qui est la plus sécurisée :</p>
+        <pre><code class="language-php">$query = "SELECT * FROM utilisateurs WHERE pseudo = :pseudo";
+$stmt = $dbh->prepare($query);
+$stmt->bindParam(':pseudo', $_SESSION['user'], PDO::PARAM_STR);
+$stmt->execute();
+$utilisateur = $stmt->fetch();</code></pre>
+    </section>
+
+</section>

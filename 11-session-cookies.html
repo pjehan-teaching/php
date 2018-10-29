@@ -1,0 +1,70 @@
+<section id="session-cookies">
+
+    <section>
+        <h3>Les sessions et cookies</h3>
+    </section>
+
+    <section>
+        <h3>Présentation</h3>
+        <p>Les sessions et les cookies permettent d’enregistrer des données spécifiques à un internaute de façon temporaire.</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Cookies</th>
+                <th>Session</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Stocké sur l’ordinateur de l’internaute</td>
+                <td>Stocké sur le serveur</td>
+            </tr>
+            <tr>
+                <td>Supprimé à une date fixe</td>
+                <td>Supprimé à la fin de la session (fermeture du navigateur)</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Les cookies</h3>
+        <p>Pour définir la valeur d’un cookie, on utilise la fonction PHP <code class="language-php">setcookie()</code>.</p>
+        <p>Pour récupérer la valeur d’un cookie, on utilise la superglobale <code class="language-php">$_COOKIE</code></p>
+        <pre><code class="language-php">setcookie('nom', 'Dupont', time() + 3600); // Création d'un cookie ayant une durée de vie d'une heure
+setcookie('prenom', 'Jean', time() + 3600*24); // Création d'un cookie ayant une durée de vie d'un jour
+
+echo 'Bonjour ' . $_COOKIE['nom'];</code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.8em;">La fonction setcookie doit impérativement être utilisée avant le code HTML !</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Les cookies</h3>
+        <p>Pour supprimer un cookie, il faut définir sa date d’expiration à une date antérieur. On peut également utiliser la fonction PHP <code class="language-php">unset()</code> pour supprimer la variable.</p>
+        <pre><code class="language-php">setcookie('nom', null, time() - 3600);
+setcookie('prenom', null, time() - 3600);
+unset($_COOKIE['nom']);
+unset($_COOKIE['prenom']);</code></pre>
+    </section>
+
+    <section>
+        <h3>Les sessions</h3>
+        <p>Pour obtenir ou définir la valeur d’une session, on utilise la fonction PHP <code class="language-php">session_start()</code> puis on accède à la superglobale <code class="language-php">$_SESSION</code>. La fonction <code class="language-php">session_destroy()</code> permet de supprimer toutes les valeurs associées à une session.</p>
+        <pre><code class="language-php">session_start();
+$_SESSION['nom'] = 'Dupont';
+$_SESSION['prenom'] = 'Jean';</code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.8em;">La fonction session_start doit impérativement être utilisée avant le code HTML !</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Les sessions</h3>
+        <p>Pour supprimer une session, on utilise la fonction PHP <code class="language-php">session_destroy()</code>. Pour pouvoir utiliser cette fonction, il faut avoir démarrer la session avec la fonction <code class="language-php">session_start()</code>.</p>
+        <pre><code class="language-php">session_start();
+session_destroy();</code></pre>
+    </section>
+
+</section>
