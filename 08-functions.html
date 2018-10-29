@@ -1,0 +1,107 @@
+<section id="functions">
+
+    <section>
+        <h2>Les fonctions</h2>
+    </section>
+
+    <section>
+        <h3>Présentation</h3>
+        <img src="assets/images/function.png" alt="Fonction">
+    </section>
+
+    <section>
+        <h3>Les fonctions PHP</h3>
+        <ul>
+            <li>PHP met à disposition des développeurs de nombreuses fonctions.</li>
+            <li>Les fonctions sont comme des outils que l’on peut utiliser à volonté lorsqu’on en a besoin.</li>
+            <li>Cependant, il est également possible de créer ses propres fonctions.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Syntaxe et vocabulaire</h3>
+        <p>La <strong>déclaration</strong> d'une fonction se fait en utilisant le mot clé <code class="language-php">function</code>. Une fonction a un <strong>nom</strong> et peut avoir zéro ou plusieurs <strong>paramètres</strong> en entrée et elle peut avoir zéro ou une valeur de retour.</p>
+        <pre><code class="language-php">function multiplication(float $val1, float $val2) : float
+{
+   $resultat = $val1 * $val2;
+   return $resultat;
+}</code></pre>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.7em;">Depuis la version 7 de PHP, il est possible de typer les paramètres et la valeur de retour</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Exemple</h3>
+        <p>Ci-dessous, la fonction "bonjour" est déclarée pour être ensuite utilisée (appelée).</p>
+        <pre id="function-bonjour"><code class="language-php">function bonjour(string $pseudo = "toi") : string {
+  return "Bonjour " . $pseudo;
+}
+
+$message = bonjour("John");
+echo $message;</code></pre>
+        <p>Cette fonction prend en paramètre le pseudo de l'utilisateur. Cependant, ce paramètre est optionel et sa valeur par défaut est <code class="language-php">"toi"</code>.</p>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Ecrivez une fonction permettant de faciliter le débuggage d'une variable en ajoutant les balises HTML <code class="language-html"><pre></pre></code> autour de la fonction <code class="language-php">print_r()</code>.</p>
+        <p>Ajoutez un paramètre optionnel permettant de définir si le code doit s'arrêter ou non (ajout optionel d'une instruction <code class="language-php">die;</code>).</p>
+    </section>
+
+    <section>
+        <h3>La portée des variables</h3>
+        <p>En PHP, une variable déclarée dans une fonction n'est pas accessible en dehors de la fonction.</p>
+        <pre><code class="language-php">$age = 25;
+
+function anniversaire() {
+  $age++;
+  return "Vous avez " . $age . " ans."; // Ici, la variable $age n'est PAS accessible
+}
+
+$message = anniversaire();
+echo $message;</code></pre>
+    </section>
+
+    <section>
+        <h3>La portée des variables</h3>
+        <p>En PHP, une variable déclarée en dehors d'une fonction n'est pas accessible dans une fonctions.</p>
+        <pre><code class="language-php">function anniversaire($age) {
+  $age++;
+}
+
+anniversaire(10);
+anniversaire(10);
+echo "Vous avez " . $age . " ans"; // Ici, la variable $age n'est PAS accessible</code></pre>
+    </section>
+
+    <section>
+        <h3>Les variables globales</h3>
+        <p>Il est cependant possible d'accèder à une variable depuis une fonction en utilisant le mot clé <code class="language-php">global</code> :</p>
+        <pre><code class="language-php">$age = 10;
+
+function anniversaire() {
+  global $age;
+  $age++;
+}
+
+anniversaire();
+echo $age;</code></pre>
+        <footer>
+            <a href="#" class="warning">Il est préférable d’éviter l’utilisation de variables globales</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Organisation</h3>
+        <p>Généralement, on écrira les fonctions dans un fichier spécifique (functions.php) que l’on inclura ensuite sur les pages.</p>
+        <pre><code class="language-php">require_once("functions.php");
+$articles = getArticles(); // Fonction déclarée dans le fichier functions.php</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Utilisez les fonctions pour segmenter le code source du projet fil rouge.</p>
+    </section>
+
+</section>

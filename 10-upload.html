@@ -1,0 +1,22 @@
+<section id="upload">
+
+    <section>
+        <h3>Uploader des fichiers</h3>
+    </section>
+
+    <section>
+        <h3>Envoyer un fichier</h3>
+        <p>Pour uploader des fichiers sur un serveur via une page web, nous pouvons utiliser un champ <strong>input</strong> de type <strong>file</strong>.</p>
+        <p>Il faut également penser à ajouter l’attribut <code class="language-html">enctype="multipart/form-data"</code> sur la balise form pour permettre l’envoi de fichier.</p>
+        <pre><code class="language-php">&lt;form method="POST" action="traitement.php" enctype="multipart/form-data"&gt;
+  &lt;input type="file" name="image" accept="image/*"/&gt;
+  &lt;input type="submit" value="Envoyer"/&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>Récupérer un fichier</h3>
+        <p>Lors de l’envoi du formulaire, le fichier est stocké dans un dossier temporaire et les informations concernant ce fichier sont stockées dans la superglobale <code class="language-php">$_FILES</code>.</p>
+    </section>
+
+</section>

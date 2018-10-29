@@ -1,0 +1,158 @@
+<section id="array">
+
+    <section>
+        <h2>Les tableaux</h2>
+    </section>
+
+    <section>
+        <h3>Présentation</h3>
+        <p>Un tableau (array) est un type de donnée. On peut donc utiliser une variable pour manipuler des tableaux.</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Valeur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0</td>
+                <td>Pierre</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Eric</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Antoine</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Julie</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Marie</td>
+            </tr>
+            </tbody>
+        </table>
+        <footer>
+            <a href="#" class="info">En PHP, les tableaux commencent à l’index 0</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Déclarer un tableau</h3>
+        <p>Les extraits de code ci-dessous permet de créer un tableau en insérant des valeurs dans chaque cases.</p>
+        <div class="container">
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Utiliser la fonction array
+$classes = array('Pierre', 'Eric', 'Antoine');</code></pre>
+            </div>
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Utiliser la syntaxe PHP7+
+$classes = ['Pierre', 'Eric', 'Antoine'];</code></pre>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Définir chaque index
+$classes[0] = 'Pierre';
+$classes[1] = 'Eric';
+$classes[2] = 'Antoine';</code></pre></div>
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Définir chaque index sans préciser les numéros de case
+$classes[] = 'Pierre';
+$classes[] = 'Eric';
+$classes[] = 'Antoine';</code></pre></div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Les tableaux associatifs</h3>
+        <p>On peut également créer des tableaux associatifs c’est-à-dire utiliser des chaînes de caractères pour remplacer les index :</p>
+        <div class="container">
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Utiliser la fonction array
+$etudiant = array(
+  'nom' => 'Dupont',
+  'prenom' => 'Jean',
+  'age' => 19
+);</code></pre>
+            </div>
+            <div class="col">
+                <pre><code class="language-php"><?php
+// Définir chaque index
+$etudiant['nom'] = 'Dupont';
+$etudiant['prenom'] = 'Jean';
+$etudiant['age'] = 19;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Tableaux multi-dimensions</h3>
+        <p>On pourra également mettre des tableaux dans des tableaux.</p>
+        <div class="instructions">
+            <ol>
+                <li>Créez une variable $classe représentant un tableau pour lequel chacune des cases contiendra un étudiant (représenté à l’aide d’un tableau associatif).</li>
+            </ol>
+        </div>
+        <footer>
+            <a href="#" class="info" style="font-size: 0.7em;">Utilisez print_r() pour afficher votre tableau (utilisez la balise HTML &lt;pre&gt; pour la mise en forme)</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Quelques fonctions utiles</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Fonction</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>count</td>
+                <td>Compte tous les éléments d'un tableau ou quelque chose d'un objet</td>
+            </tr>
+            <tr>
+                <td>sort</td>
+                <td>Trie un tableau</td>
+            </tr>
+            <tr>
+                <td>in_array</td>
+                <td>Indique si une valeur appartient à un tableau</td>
+            </tr>
+            <tr>
+                <td>array_splice</td>
+                <td>Efface et remplace une portion de tableau</td>
+            </tr>
+            <tr>
+                <td>array_push</td>
+                <td>Empile un ou plusieurs éléments à la fin d'un tableau</td>
+            </tr>
+            <tr>
+                <td>array_pop</td>
+                <td>Dépile un élément de la fin d'un tableau</td>
+            </tr>
+            </tbody>
+        </table>
+        <footer>
+            <a href="http://www.php.net" class="info" target="_blank">La liste complète des fonctions est disponible sur la doc en ligne</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Utilisez les tableaux pour stocker les données du projet fil rouge.</p>
+    </section>
+
+</section>

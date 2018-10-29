@@ -1,0 +1,64 @@
+<section id="include">
+
+    <section>
+        <h2>Inclure une page</h2>
+    </section>
+
+    <section>
+        <h3>Structure d'une page</h3>
+        <div id="page-structure">
+            <div id="page-header">HEADER</div>
+            <div id="page-menu">MENU</div>
+            <div id="page-body">BODY</div>
+            <div id="page-footer">FOOTER</div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Avantages</h3>
+        <p>Le code du header, du menu et du footer est copié sur l’ensemble des pages.</p>
+        <p>Solution : Ségmenter le code source en plusieurs fichiers</p>
+        <ul class="blocks blocks-3">
+            <li>Alléger le code source</li>
+            <li>Améliorer la maintenabilité du code</li>
+            <li>Code source réutilisable</li>
+            <li>Séparer les paramètres du site</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Les fonctions</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Fonction</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code class="language-php">include</code></td>
+                <td>L'instruction de langage include inclut et exécute le fichier spécifié en argument.</td>
+            </tr>
+            <tr>
+                <td><code class="language-php">include_once</code></td>
+                <td>Le comportement est similaire à include, mais la différence est que si le code a déjà été inclus, il ne le sera pas une seconde fois.</td>
+            </tr>
+            <tr>
+                <td><code class="language-php">require</code></td>
+                <td>require est identique à include mise à part le fait que lorsqu'une erreur survient, il produit également une erreur fatale.</td>
+            </tr>
+            <tr>
+                <td><code class="language-php">require_once</code></td>
+                <td>L'instruction require_once est identique à require mis à part que PHP vérifie si le fichier a déjà été inclus, et si c'est le cas, ne l'inclut pas une deuxième fois.</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Utilisez require et include pour segmenter le code source du projet fil rouge.</p>
+    </section>
+
+</section>
