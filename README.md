@@ -4,7 +4,7 @@
 
 ```bash
 npm install -g revealexpress
-git clone https://github.com/pjehan-teaching/ph
+git clone https://github.com/pjehan-teaching/php
 cd php
 revealexpress
 ```
