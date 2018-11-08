@@ -10,9 +10,9 @@
         <div class="container">
             <div class="col">
                 <pre><code class="language-php">&lt;ul&gt;
-    <?php foreach($listePays as $pays) { ?>
-        &lt;li&gt;<?php echo $pays; ?>&lt;/li&gt;
-    <?php } ?>
+    &lt;?php foreach($listePays as $pays) { ?>
+        &lt;li&gt;&lt;?php echo $pays; ?>&lt;/li&gt;
+    &lt;?php } ?>
 &lt;/ul&gt;</code></pre>
             </div>
             <div class="col">
@@ -31,7 +31,7 @@
     <section>
         <h3>La boucle while</h3>
         <p>La boucle while permet d’effectuer une itération tant que la condition n’est pas vraie :</p>
-        <pre id="while-loop"><code class="language-php"><?php
+        <pre id="while-loop"><code class="language-php">&lt;?php
 $compteur = 3;
 
 while($compteur > 0) {
@@ -47,41 +47,44 @@ echo 'Bonne année !!';</code></pre>
 
     <section>
         <h3>La boucle for</h3>
-        <p>La boucle for est similaire à la boucle while mais elle permet d’instancier, d’initialiser et de redéfinir la valeur d’une variable plus facilement :</p>
-        <pre><code class="language-php"><?php
+        <p>La boucle for est similaire à la boucle while mais elle permet d’instancier, d’initialiser et de redéfinir
+            la valeur d’une variable plus facilement :</p>
+        <pre><code class="language-php">&lt;?php
 for($pourcentage = 0; $pourcentage < 100; $pourcentage++) {
   echo 'Chargement en cours. ' . $pourcentage . '% effectué...';
 }</code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.8em;">La boucle for permet de ne pas oublier l’incrémentation de la variable.</a>
+            <a href="#" class="info" style="font-size: 0.8em;">La boucle for permet de ne pas oublier l’incrémentation
+                de la variable.</a>
         </footer>
     </section>
 
     <section>
         <h3>La boucle foreach</h3>
         <p>Itérer sur les éléments d’un tableau avec foreach :</p>
-        <pre><code class="language-php"><?php foreach($etudiants as $etudiant) : ?>
+        <pre><code class="language-php">&lt;?php foreach($etudiants as $etudiant) : ?>
     &lt;article&gt;
-        &lt;h2&gt;<?php echo $etudiant['nom'] . ' ' . $etudiant['prenom']; ?>&lt;/h2&gt;
-        Age : <?php echo $etudiant['age']; ?> ans
-        &lt;p&gt;<?php echo $etudiant['bio']; ?>&lt;/p&gt;
+        &lt;h2&gt;&lt;?php echo $etudiant['nom'] . ' ' . $etudiant['prenom']; ?>&lt;/h2&gt;
+        Age : &lt;?php echo $etudiant['age']; ?> ans
+        &lt;p&gt;&lt;?php echo $etudiant['bio']; ?>&lt;/p&gt;
     &lt;/article>
-<?php endforeach; ?></code></pre>
+&lt;?php endforeach; ?></code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.9em;">PHP autorise une syntaxe alternative pour les blocs d’instructions</a>
+            <a href="#" class="info" style="font-size: 0.9em;">PHP autorise une syntaxe alternative pour les blocs
+                d’instructions</a>
         </footer>
     </section>
 
     <section>
         <h3>Récupérer l'index</h3>
         <p>On peut également obtenir l’index à l’intérieur de la boucle avec la syntaxe suivante :</p>
-        <pre><code class="language-php"><?php foreach($etudiants as $key => $etudiant) : ?>
-    &lt;article id="<?php echo $key; ?>"&gt;
-        &lt;h2&gt;<?php echo $etudiant['nom'] . ' ' . $etudiant['prenom']; ?>&lt;/h2&gt;
-        Age : <?php echo $etudiant['age']; ?> ans
-        &lt;p&gt;<?php echo $etudiant['bio']; ?>&lt;/p&gt;
+        <pre><code class="language-php">&lt;?php foreach($etudiants as $key => $etudiant) : ?>
+    &lt;article id="&lt;?php echo $key; ?>"&gt;
+        &lt;h2&gt;&lt;?php echo $etudiant['nom'] . ' ' . $etudiant['prenom']; ?>&lt;/h2&gt;
+        Age : &lt;?php echo $etudiant['age']; ?> ans
+        &lt;p&gt;&lt;?php echo $etudiant['bio']; ?>&lt;/p&gt;
     &lt;/article>
-<?php endforeach; ?></code></pre>
+&lt;?php endforeach; ?></code></pre>
     </section>
 
     <section>

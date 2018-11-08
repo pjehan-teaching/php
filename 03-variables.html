@@ -7,7 +7,7 @@
     <section>
         <h3>La fonction echo</h3>
         <p>La fonction echo permet d’afficher du contenu sur une page HTML :</p>
-        <pre><code class="language-php"><?php echo "Hello world!"; ?></code></pre>
+        <pre><code class="language-php">&lt;?php echo "Hello world!"; ?></code></pre>
         <footer>
             <a href="#" class="info">Chaque instruction PHP doit se terminer par un point-virgule !</a>
         </footer>
@@ -16,11 +16,12 @@
     <section>
         <h3>La fonction echo</h3>
         <p>Cette fonction permet également de générer du code HTML :</p>
-        <pre><code class="language-php"><?php echo "&lt;h1&gt;Hello world!&lt;/h1&gt;"; ?></code></pre>
+        <pre><code class="language-php">&lt;?php echo "&lt;h1&gt;Hello world!&lt;/h1&gt;"; ?></code></pre>
         <p>On évitera d’écrire des balises HTML en PHP afin de conserver la coloration syntaxique :</p>
-        <pre><code class="language-php">&lt;h1&gt;<?php echo "Hello world!"; ?>&lt;/h1&gt;</code></pre>
+        <pre><code class="language-php">&lt;h1&gt;&lt;?php echo "Hello world!"; ?>&lt;/h1&gt;</code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.7em;">Le PHP peut générer du code HTML, CSS ou Javascript car il est traité par le serveur</a>
+            <a href="#" class="info" style="font-size: 0.7em;">Le PHP peut générer du code HTML, CSS ou Javascript car
+                il est traité par le serveur</a>
         </footer>
     </section>
 
@@ -39,7 +40,8 @@
     <section>
         <h3>Déclarer une variable</h3>
         <ul>
-            <li>Il est important de bien nommer ses variables (éviter <code class="language-php">$a</code>, <code class="language-php">$b</code>… mais préférer <code class="language-php">$date</code>, <code class="language-php">$nom</code>...)</li>
+            <li>Il est important de bien nommer ses variables (éviter <code class="language-php">$a</code>, <code class="language-php">$b</code>…
+                mais préférer <code class="language-php">$date</code>, <code class="language-php">$nom</code>...)</li>
             <li>
                 On retrouve souvent deux "modes" d’écriture pour les variables :
                 <ul>
@@ -67,32 +69,32 @@
         <p>En PHP, une même variable peut contenir des informations de différents types :</p>
         <table>
             <thead>
-            <tr>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Chaîne de caractères (string)</td>
-                <td>Texte écrit entre guillemets ou apostrophes</td>
-            </tr>
-            <tr>
-                <td>Nombre entier (int)</td>
-                <td>Nombre entier positif ou négatif</td>
-            </tr>
-            <tr>
-                <td>Nombre à virgule (float)</td>
-                <td>Nombre à virgule positif ou négatif (la virgule s’écrit avec le caractère “.”)</td>
-            </tr>
-            <tr>
-                <td>Booléens (bool)</td>
-                <td>Valeur vraie (true) ou fausse (false)</td>
-            </tr>
-            <tr>
-                <td>Vide (NULL)</td>
-                <td>Aucun type, variable vide</td>
-            </tr>
+                <tr>
+                    <td>Chaîne de caractères (string)</td>
+                    <td>Texte écrit entre guillemets ou apostrophes</td>
+                </tr>
+                <tr>
+                    <td>Nombre entier (int)</td>
+                    <td>Nombre entier positif ou négatif</td>
+                </tr>
+                <tr>
+                    <td>Nombre à virgule (float)</td>
+                    <td>Nombre à virgule positif ou négatif (la virgule s’écrit avec le caractère “.”)</td>
+                </tr>
+                <tr>
+                    <td>Booléens (bool)</td>
+                    <td>Valeur vraie (true) ou fausse (false)</td>
+                </tr>
+                <tr>
+                    <td>Vide (NULL)</td>
+                    <td>Aucun type, variable vide</td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -100,7 +102,7 @@
     <section>
         <h3>Affecter une valeur</h3>
         <p>Affecter une valeur à une variable :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $nom = 'Dupont'; // Variable de type string
 $prenom = "Jean"; // Variable de type string
 $message = 'J\'ai compris le PHP'; // Variable de type string
@@ -110,34 +112,36 @@ $homme = true; // Variable de type bool
 $profession = NULL; // Variable vide
 ?></code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.8em;">Une variable ne peut pas changer de nom mais elle peut changer de valeur</a>
+            <a href="#" class="info" style="font-size: 0.8em;">Une variable ne peut pas changer de nom mais elle peut
+                changer de valeur</a>
         </footer>
     </section>
 
     <section>
         <h3>La concaténation</h3>
         <p>Effectuer une concaténation :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $nom = 'Dupont'; // Variable de type string
 $prenom = "Jean"; // Variable de type string
 $message = "Bonjour $nom $prenom";
 $message = 'Bonjour ' . $nom . ' ' . $prenom;
 ?></code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.6em;">La syntaxe avec les apostrophes est préférable car elle permet de conserver la coloration syntaxique</a>
+            <a href="#" class="info" style="font-size: 0.6em;">La syntaxe avec les apostrophes est préférable car elle
+                permet de conserver la coloration syntaxique</a>
         </footer>
     </section>
 
     <section>
         <h3>La concaténation</h3>
         <p>Afficher la valeur d’une variable :</p>
-        <pre><code class="language-php"><?php echo 'Bonjour ' . $nom . ' ' . $prenom . '. Vous avez ' . $age . ' ans !'; ?></code></pre>
+        <pre><code class="language-php">&lt;?php echo 'Bonjour ' . $nom . ' ' . $prenom . '. Vous avez ' . $age . ' ans !'; ?></code></pre>
     </section>
 
     <section>
         <h3>La concaténation</h3>
         <p>Quel message sera affiché lors de l'exécution de ce code PHP ?</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $message = 'Bonjour';
 $username = 'jdupont';
 $age = 16;
@@ -149,8 +153,9 @@ echo $message;
 
     <section>
         <h3>L'incrémentation</h3>
-        <p>Dans l’une des slides précédentes, nous avons effectués une incrémentation sur une variable (<code class="language-php">$age = $age + 1</code>). Cette opération étant récurrente en programmation, il existe une syntaxe simplifiée :</p>
-        <pre><code class="language-php"><?php
+        <p>Dans l’une des slides précédentes, nous avons effectués une incrémentation sur une variable (<code class="language-php">$age = $age + 1</code>).
+            Cette opération étant récurrente en programmation, il existe une syntaxe simplifiée :</p>
+        <pre><code class="language-php">&lt;?php
 $age = 16;
 $age++; // $age = 17
 $age--; // $age = 16
@@ -159,35 +164,36 @@ $age--; // $age = 16
 
     <section>
         <h3>Opérations arithmétiques</h3>
-        <p>Il est possible d’effectuer des opérations simples en PHP (pour les opérations plus complexes, nous utiliserons des fonctions).</p>
+        <p>Il est possible d’effectuer des opérations simples en PHP (pour les opérations plus complexes, nous
+            utiliserons des fonctions).</p>
         <table>
             <thead>
-            <tr>
-                <th>Opérateur</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Opérateur</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>+</td>
-                <td>Addition</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>Soustraction</td>
-            </tr>
-            <tr>
-                <td>/</td>
-                <td>Division</td>
-            </tr>
-            <tr>
-                <td>*</td>
-                <td>Multiplication</td>
-            </tr>
-            <tr>
-                <td>%</td>
-                <td>Modulo (reste de la division)</td>
-            </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Soustraction</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Modulo (reste de la division)</td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -195,7 +201,7 @@ $age--; // $age = 16
     <section>
         <h3>Opérations arithmétiques</h3>
         <p>Cet exemple permet de calculer la différence entre deux notes :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $note1 = 12;
 $note2 = 15;
 echo 'Différence entre les deux notes : ' . ($note2 - $note1);
@@ -210,38 +216,40 @@ echo 'Différence entre les deux notes : ' . ($note2 - $note1);
     <section>
         <h3>Le type DateTime</h3>
         <p>Il existe également un autre type de donnée permettant de stocker des dates :</p>
-        <pre><code class="language-php"><?php $date_naissance = new DateTime("2016-07-08 11:14:15"); ?></code></pre>
+        <pre><code class="language-php">&lt;?php $date_naissance = new DateTime("2016-07-08 11:14:15"); ?></code></pre>
         <table>
             <thead>
-            <tr>
-                <th>Fonction</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Fonction</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><code class="language-php">DateTime::setDate</code></td>
-                <td>Assigne la date</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">DateTime::diff</code></td>
-                <td>Retourne la différence entre deux objets DateTime</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">DateTime::format</code></td>
-                <td>Retourne une date formatée suivant le format fourni</td>
-            </tr>
+                <tr>
+                    <td><code class="language-php">DateTime::setDate</code></td>
+                    <td>Assigne la date</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">DateTime::diff</code></td>
+                    <td>Retourne la différence entre deux objets DateTime</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">DateTime::format</code></td>
+                    <td>Retourne une date formatée suivant le format fourni</td>
+                </tr>
             </tbody>
         </table>
     </section>
 
     <section>
         <h3>Les constantes</h3>
-        <p>L'utilisation des constantes est similaire à l'utilisation des variables sauf qu'une constante ne peut pas changer de valeur.</p>
+        <p>L'utilisation des constantes est similaire à l'utilisation des variables sauf qu'une constante ne peut pas
+            changer de valeur.</p>
         <pre><code class="language-php">define("SITE_URL", "http://www.monsite.com/");
 echo SITE_URL;</code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.8em;">Les constantes pourront être utilisées pour stocker les paramètres du site</a>
+            <a href="#" class="info" style="font-size: 0.8em;">Les constantes pourront être utilisées pour stocker les
+                paramètres du site</a>
         </footer>
     </section>
 

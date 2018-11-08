@@ -6,14 +6,16 @@
 
     <section>
         <h3>Introduction</h3>
-        <p>Les conditions permettent d'exécuter une ou plusieurs instructions en fonction du résultat d’une comparaison.</p>
-        <p>Exemple : Si l’utilisateur a posté plus de 50   messages, alors c’est un utilisateur VIP. Sinon, il s’agit d’un utilisateur débutant.</p>
+        <p>Les conditions permettent d'exécuter une ou plusieurs instructions en fonction du résultat d’une
+            comparaison.</p>
+        <p>Exemple : Si l’utilisateur a posté plus de 50 messages, alors c’est un utilisateur VIP. Sinon, il s’agit
+            d’un utilisateur débutant.</p>
     </section>
 
     <section>
         <h3>Introduction</h3>
         <p>On pourrait représenter l’algorithme précédent avec le code PHP suivant :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $nbMsg = 105;
 
 if($nbMsg > 50) {
@@ -29,40 +31,43 @@ if($nbMsg > 50) {
         <p>Les symboles de comparaison :</p>
         <table>
             <thead>
-            <tr>
-                <th>Symbole</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Symbole</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>==</td>
-                <td>Est égale à</td>
-            </tr>
-            <tr>
-                <td>></td>
-                <td>Est supérieur à</td>
-            </tr>
-            <tr>
-                <td>>=</td>
-                <td>Est supérieur ou égale à</td>
-            </tr>
-            <tr>
-                <td><</td>
-                <td>Est inférieur à</td>
-            </tr>
-            <tr>
-                <td><=</td>
-                <td>Est inférieur ou égale à</td>
-            </tr>
-            <tr>
-                <td>!=</td>
-                <td>Est différent de</td>
-            </tr>
+                <tr>
+                    <td>==</td>
+                    <td>Est égale à</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>Est supérieur à</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>Est supérieur ou égale à</td>
+                </tr>
+                <tr>
+                    <td>
+                        <</td> <td>Est inférieur à
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <=</td> <td>Est inférieur ou égale à
+                    </td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Est différent de</td>
+                </tr>
             </tbody>
         </table>
         <footer>
-            <a href="#" class="info" style="font-size: 0.8em;">Les symboles === et !== permettent également de comparer le type de donnée</a>
+            <a href="#" class="info" style="font-size: 0.8em;">Les symboles === et !== permettent également de comparer
+                le type de donnée</a>
             <a href="#" class="danger">Le symbole "=" change la valeur de la variable</a>
         </footer>
     </section>
@@ -70,7 +75,7 @@ if($nbMsg > 50) {
     <section>
         <h3>Symboles de comparaison</h3>
         <p>Dans l’algorithme suivant, quelles conditions sont respectées ?</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $nbMsg = 2;
 if($nbMsg == 2) { }
 if($nbMsg <= 2) { }
@@ -82,7 +87,7 @@ if($nbMsg !== '2') { }
     <section>
         <h3>Symboles de comparaison</h3>
         <p>Avec les variables de type booléen, on peut utiliser une syntaxe simplifiée :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $isAdmin = true;
 
 if ($isAdmin == true) { }
@@ -97,7 +102,7 @@ if (!$isAdmin) { } // Ici, le point d'exclamation permet d'inverser la condition
     <section>
         <h3>Symboles de comparaison</h3>
         <p>On peut également combiner plusieurs conditions :</p>
-        <pre><code class="language-php"><?php
+        <pre><code class="language-php">&lt;?php
 $nbMsg = 105;
 $registrationDate = new DateTime("2015-07-08 11:14:15");
 $isAdmin = false;
@@ -121,27 +126,28 @@ if($isAdmin) {
         <h3>Symboles de comparaison</h3>
         <table>
             <thead>
-            <tr>
-                <th>Symbole</th>
-                <th>Symbole alternatif</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Symbole</th>
+                    <th>Symbole alternatif</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>&&</td>
-                <td>AND</td>
-                <td>Et</td>
-            </tr>
-            <tr>
-                <td>||</td>
-                <td>OR</td>
-                <td>Ou</td>
-            </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>AND</td>
+                    <td>Et</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>OR</td>
+                    <td>Ou</td>
+                </tr>
             </tbody>
         </table>
         <footer>
-            <a href="#" class="info" style="font-size: 0.8em;">Il est préférable d’utiliser la 1ère syntaxe qui est commune à la plupart des langages</a>
+            <a href="#" class="info" style="font-size: 0.8em;">Il est préférable d’utiliser la 1ère syntaxe qui est
+                commune à la plupart des langages</a>
         </footer>
     </section>
 
@@ -150,7 +156,7 @@ if($isAdmin) {
         <p>Lorsqu'une variable est comparée à de nombreuses valeurs, il est possible d'utiliser un switch :</p>
         <div class="container">
             <div class="col">
-                <pre><code class="language-php"><?php
+                <pre><code class="language-php">&lt;?php
 if ($nbJoueurs == 1) {
   echo "Solitaire";
 } else if ($nbJoueurs == 2) {
@@ -167,7 +173,7 @@ if ($nbJoueurs == 1) {
 ?></code></pre>
             </div>
             <div class="col">
-                <pre><code class="language-php"><?php
+                <pre><code class="language-php">&lt;?php
 switch ($nbJoueurs) {
   case 1:
     echo "Solitaire";
@@ -197,7 +203,7 @@ switch ($nbJoueurs) {
         <p>Attention cependant à ne pas oublier l'instruction <code class="language-php">break;</code> !</p>
         <div class="container">
             <div class="col">
-                <pre><code class="language-php"><?php
+                <pre><code class="language-php">&lt;?php
 $nbJoueurs = 2;
 
 switch ($nbJoueurs) {
@@ -226,18 +232,23 @@ switch ($nbJoueurs) {
     <section>
         <h3>Opérateur ternaire</h3>
         <p>Il existe également une autre façon d’écrire des conditions appelée condition ternaire :</p>
-        <pre><code class="language-php"><?php $message = ($score > 10) ? "Vous avez gagné" : "Vous avez perdu"; ?></code></pre>
+        <pre><code class="language-php">&lt;?php $message = ($score > 10) ? "Vous avez gagné" : "Vous avez perdu"; ?></code></pre>
         <footer>
-            <a href="#" class="info" style="font-size: 0.7em;">Il est préférable d’éviter d’utiliser cette syntaxe pour plus de clarté dans le code source</a>
+            <a href="#" class="info" style="font-size: 0.7em;">Il est préférable d’éviter d’utiliser cette syntaxe pour
+                plus de clarté dans le code source</a>
         </footer>
     </section>
 
     <section>
         <h3>Exercice badge</h3>
-        <p>Téléchargez le fichier <a href="assets/files/badges.zip">badges.zip</a> puis utiliser les conditions pour afficher les bons badges à l'utilisateur.</p>
+        <p>Téléchargez le fichier <a href="assets/files/badges.zip">badges.zip</a> puis utiliser les conditions pour
+            afficher les bons badges à l'utilisateur.</p>
         <div class="instructions">
             <ol>
-                <li>Créez des variables suivantes pour stocker les paramètres de l'utilisateur <code class="language-php">$is_male</code> (bool), <code class="language-php">$is_admin</code> (bool), <code class="language-php">$nb_msg</code> (int), <code class="language-php">$registration_date</code> (DateTime), <code class="language-php">$birthdate</code> (DateTime)</li>
+                <li>Créez des variables suivantes pour stocker les paramètres de l'utilisateur <code class="language-php">$is_male</code>
+                    (bool), <code class="language-php">$is_admin</code> (bool), <code class="language-php">$nb_msg</code>
+                    (int), <code class="language-php">$registration_date</code> (DateTime), <code class="language-php">$birthdate</code>
+                    (DateTime)</li>
             </ol>
         </div>
     </section>
@@ -248,7 +259,8 @@ switch ($nbJoueurs) {
         <div class="instructions" style="font-size: 0.8em;">
             <ol>
                 <li>Si l’utilisateur est admin, afficher le badge "Administrateur".</li>
-                <li>Si l’utilisateur est un homme, afficher le badge “Homme”. Sinon, afficher celui indiquant qu’il s’agit d’une femme.</li>
+                <li>Si l’utilisateur est un homme, afficher le badge “Homme”. Sinon, afficher celui indiquant qu’il
+                    s’agit d’une femme.</li>
                 <li>
                     Utilisez des instructions “if” pour afficher :
                     <ul>
@@ -257,9 +269,12 @@ switch ($nbJoueurs) {
                         <li>Une étoile pleine si l’utilisateur a posté plus de 100 messages.</li>
                     </ul>
                 </li>
-                <li>Si l’utilisateur est inscrit depuis moins de 30 jours et qu’il a posté plus de 50 messages, afficher le badge "Flood".</li>
-                <li>Si l’utilisateur est inscrit depuis plus de 365 jours ou qu’il a posté plus de 100 messages (mais qu’il n’a pas la badge "Flood"), afficher le badge "VIP".</li>
-                <li>Si la date du jour correspond à la date de naissance de l’utilisateur, afficher le badge "Anniversaire".</li>
+                <li>Si l’utilisateur est inscrit depuis moins de 30 jours et qu’il a posté plus de 50 messages,
+                    afficher le badge "Flood".</li>
+                <li>Si l’utilisateur est inscrit depuis plus de 365 jours ou qu’il a posté plus de 100 messages (mais
+                    qu’il n’a pas la badge "Flood"), afficher le badge "VIP".</li>
+                <li>Si la date du jour correspond à la date de naissance de l’utilisateur, afficher le badge
+                    "Anniversaire".</li>
             </ol>
         </div>
     </section>

@@ -16,36 +16,36 @@
         <h3>Les variables superglobales</h3>
         <table>
             <thead>
-            <tr>
-                <th>Variable</th>
-                <th>Description</th>
-            </tr>
+                <tr>
+                    <th>Variable</th>
+                    <th>Description</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><code class="language-php">$GLOBALS</code></td>
-                <td>Référence toutes les variables disponibles dans un contexte global</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">$_SERVER</code></td>
-                <td>Variables de serveur et d'exécution</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">$_GET</code> <code class="language-php">$_POST</code></td>
-                <td>Variables HTTP GET / Variables HTTP POST</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">$_FILES</code></td>
-                <td>Variable de téléchargement de fichier via HTTP</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">$_COOKIE</code></td>
-                <td>Cookies HTTP</td>
-            </tr>
-            <tr>
-                <td><code class="language-php">$_SESSION</code></td>
-                <td>Variables de session</td>
-            </tr>
+                <tr>
+                    <td><code class="language-php">$GLOBALS</code></td>
+                    <td>Référence toutes les variables disponibles dans un contexte global</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">$_SERVER</code></td>
+                    <td>Variables de serveur et d'exécution</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">$_GET</code> <code class="language-php">$_POST</code></td>
+                    <td>Variables HTTP GET / Variables HTTP POST</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">$_FILES</code></td>
+                    <td>Variable de téléchargement de fichier via HTTP</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">$_COOKIE</code></td>
+                    <td>Cookies HTTP</td>
+                </tr>
+                <tr>
+                    <td><code class="language-php">$_SESSION</code></td>
+                    <td>Variables de session</td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -54,16 +54,22 @@
         <h3>Les variables globales</h3>
         <p>Pour transmettre des informations entre les pages, nous pourront utiliser 2 méthodes :</p>
         <ol>
-            <li>Via l'URL (<code class="language-php">$_GET</code>) : Les données seront transmises et visibles dans l'URL.</li>
-            <li>Via un formulaire (<code class="language-php">$_POST</code>) : Les données seront transmises de façon dans la requête HTTP à l'aide d'un formulaire.</li>
+            <li>Via l'URL (<code class="language-php">$_GET</code>) : Les données seront transmises et visibles dans
+                l'URL.</li>
+            <li>Via un formulaire (<code class="language-php">$_POST</code>) : Les données seront transmises de façon
+                dans la requête HTTP à l'aide d'un formulaire.</li>
         </ol>
     </section>
 
     <section>
         <h3>Via l'URL</h3>
-        <p>http://localhost/monsite/index.php?<span class="url-param">user</span>=<span class="url-value">jdupont</span>&<span class="url-param">admin</span>=<span class="url-value">0</span></p>
-        <p>Dans l’exemple ci-dessus, on passe à l’URL 2 paramètres. Le paramètre <span class="url-param">user</span> associé à la valeur <span class="url-value">jdupont</span> et le paramètre <span class="url-param">admin</span> associé à la valeur <span class="url-value">0</span>.</p>
-        <p>Le caractère ? permet d’indiquer que l’url contient des paramètres et le caractère & permet de définir plusieurs paramètres. Enfin, le caractère = permet d’associer un paramètre à une valeur.</p>
+        <p>http://localhost/monsite/index.php?<span class="url-param">user</span>=<span class="url-value">jdupont</span>&<span
+                class="url-param">admin</span>=<span class="url-value">0</span></p>
+        <p>Dans l’exemple ci-dessus, on passe à l’URL 2 paramètres. Le paramètre <span class="url-param">user</span>
+            associé à la valeur <span class="url-value">jdupont</span> et le paramètre <span class="url-param">admin</span>
+            associé à la valeur <span class="url-value">0</span>.</p>
+        <p>Le caractère ? permet d’indiquer que l’url contient des paramètres et le caractère & permet de définir
+            plusieurs paramètres. Enfin, le caractère = permet d’associer un paramètre à une valeur.</p>
         <footer>
             <a href="#" class="danger">Il ne faut jamais passer des valeurs sensibles dans l’URL !</a>
         </footer>
@@ -82,28 +88,30 @@ echo 'Bonjour ' . $username;</code></pre>
             <div class="col">
                 <h4>index.php</h4>
                 <pre><code class="language-php">&lt;ul&gt;
-    <?php foreach($listePays as $pays) : ?>
+    &lt;?php foreach($listePays as $pays) : ?>
         &lt;li&gt;
-            &lt;a href="country.php?pays=<?php echo $pays; ?>"&gt;
-                <?php echo $pays; ?>
+            &lt;a href="country.php?pays=&lt;?php echo $pays; ?>"&gt;
+                &lt;?php echo $pays; ?>
             &lt;/a&gt;
         &lt;/li&gt;
-    <?php endforeach; ?>
+    &lt;?php endforeach; ?>
 &lt;/ul&gt;</code></pre>
             </div>
             <div class="col">
                 <h4>country.php</h4>
-                <pre><code class="language-php"><?php $nompays = $_GET['pays']; ?>
+                <pre><code class="language-php">&lt;?php $nompays = $_GET['pays']; ?>
 
-&lt;h1&gt;<?php echo $nompays; ?>&lt;/h1&gt;</code></pre>
+&lt;h1&gt;&lt;?php echo $nompays; ?>&lt;/h1&gt;</code></pre>
             </div>
         </div>
-        <p>Dans cet exemple le lien se fait avec le mot "pays" utilisé dans l'URL (<code class="language-php">&lt;a href="country.php?pays=<?php echo $pays; ?>"&gt;</code>) puis ensuite récupéré via la variable <code class="language-php">$_GET['pays']</code>.</p>
+        <p>Dans cet exemple le lien se fait avec le mot "pays" utilisé dans l'URL (<code class="language-php">&lt;a href="country.php?pays=&lt;?php echo $pays; ?>"&gt;</code>)
+            puis ensuite récupéré via la variable <code class="language-php">$_GET['pays']</code>.</p>
     </section>
 
     <section>
         <h3>Via un formulaire</h3>
-        <p>Via un formulaire HTML, utilisez l’attribut "name" sur les différents champs du formulaire pour les transmettre sur une page de traitement des données.</p>
+        <p>Via un formulaire HTML, utilisez l’attribut "name" sur les différents champs du formulaire pour les
+            transmettre sur une page de traitement des données.</p>
     </section>
 
     <section>
@@ -114,10 +122,13 @@ echo 'Bonjour ' . $username;</code></pre>
     &lt;textarea name="commentaire"&gt;&lt;/textarea&gt;
     &lt;input type="submit" value="Envoyer"/&gt;
 &lt;/form&gt;</code></pre>
-        <p>Pour pouvoir transférer les données, il ne faut pas oublier d'ajouter les attributs suivants sur le formulaire :</p>
+        <p>Pour pouvoir transférer les données, il ne faut pas oublier d'ajouter les attributs suivants sur le
+            formulaire :</p>
         <ul>
-            <li><code class="language-html">method="POST"</code> : Définir la méthode (GET ou POST) a utiliser pour tranférer les données.</li>
-            <li><code class="language-html">action="traitement.php"</code> : Définir la page qui sera chargée de traiter les données du formulaire.</li>
+            <li><code class="language-html">method="POST"</code> : Définir la méthode (GET ou POST) a utiliser pour
+                tranférer les données.</li>
+            <li><code class="language-html">action="traitement.php"</code> : Définir la page qui sera chargée de
+                traiter les données du formulaire.</li>
             <li><code class="language-html">name="nom"</code> : Associer chaque champs du formulaire à un nom.</li>
         </ul>
     </section>
@@ -151,7 +162,8 @@ $comment = $_POST['commentaire'];
 echo $name . ' ' . $surname . '\n' . $comment;</code></pre>
             </div>
         </div>
-        <p>Dans cet exemple, le lien se fait avec le mot "nom" utilisé dans l'attribut name de l'input (<code class="language-php">&lt;input type="text" name="nom" placeholder="Nom"/&gt;</code>) et la variable <code class="language-php">$_POST['nom']</code></p>
+        <p>Dans cet exemple, le lien se fait avec le mot "nom" utilisé dans l'attribut name de l'input (<code class="language-php">&lt;input type="text" name="nom" placeholder="Nom"/&gt;</code>)
+            et la variable <code class="language-php">$_POST['nom']</code></p>
     </section>
 
     <section>
@@ -159,7 +171,8 @@ echo $name . ' ' . $surname . '\n' . $comment;</code></pre>
         <p>NE JAMAIS FAIRE CONFIANCE AUX DONNÉES REÇUES !</p>
         <ul>
             <li>Faille XSS (ex : exécution de code javascript)</li>
-            <li>Faille CSRF (ex : forcer l’exécution d’une action par un autre utilisateur ayant les droits nécessaires)</li>
+            <li>Faille CSRF (ex : forcer l’exécution d’une action par un autre utilisateur ayant les droits
+                nécessaires)</li>
             <li>SQL Injection</li>
         </ul>
         <img src="assets/images/sql-injection.jpg" alt="SQL Injection">
