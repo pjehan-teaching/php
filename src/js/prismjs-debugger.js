@@ -1,4 +1,4 @@
-const prismjsDebugger = function(el, lines, console) {
+module.exports = function(el, lines, console) {
   return {
 
     debuggerContainer: el,
