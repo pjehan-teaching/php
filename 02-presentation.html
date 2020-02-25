@@ -104,6 +104,29 @@
     </section>
 
     <section>
+        <h3>Afficher les erreurs</h3>
+        <p>Par défaut, les erreurs PHP ne sont pas affichées sur MAMP.</p>
+        <p>Pour afficher les erreurs, il faut modifier la valeur <code class="language-ini">display_errors</code> du fichier php.ini</p>
+        <footer>
+            <a href="#" class="warning">Il existe un fichier php.ini par version de PHP</a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Localiser le fichier php.ini</h3>
+        <p>Le dossier de MAMP contient un fichier php.ini pour chaque version de PHP installée.</p>
+        <p>Pour connaitre l'emplacement du fichier php.ini, vous pouvez appeler la fonction PHP <code class="language-php">phpinfo()</code> puis actualiser la page web du navigateur :</p>
+        <img src="assets/images/phpinfo.png" alt="phpinfo">
+    </section>
+
+    <section>
+        <h3>Modifier le fichier php.ini</h3>
+        <p>Ouvrez ensuite de fichier et rechercher la ligne <code class="language-ini">display_errors</code>.</p>
+        <p>Modifier cette ligne pour la passer à "On" :</p>
+        <pre><code class="language-ini">display_errors = On</code></pre>
+    </section>
+
+    <section>
         <h3>Commentaires</h3>
         <p>Attention ! Les commentaires en PHP ne s’écrivent pas comme en HTML :</p>
         <pre><code class="language-php"><?php
