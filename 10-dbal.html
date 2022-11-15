@@ -34,13 +34,15 @@
     <section>
         <h3>Connexion</h3>
         <p>Nous allons ensuite instancier l’objet PDO en utilisant le mot clé “new” :</p>
-        <pre><code class="language-php">$host = '127.0.0.1';
-$dbname = 'ma_base';
-$user = 'root';
-$password = 'root';
+        <pre><code class="language-php">define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'ma_base');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');
 
 try {
-  $dbh = new PDO('mysql:dbname=' . $dbname . ';host=' . $host, $user, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  $dbh = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS, [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+  ]);
 } catch (PDOException $e) {
   die('Connexion échouée : ' . $e->getMessage());
 }</code></pre>
